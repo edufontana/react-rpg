@@ -6,7 +6,8 @@ import { Character } from './components/Character'
 import { useCharacter } from './hooks/useCharacter'
 
 export function App() {
-  const { moveDown, moveLeft, moveRight, moveUp, x, y } = useCharacter()
+  const { moveDown, moveLeft, moveRight, moveUp, x, y, charPosition } =
+    useCharacter()
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown)
@@ -37,7 +38,7 @@ export function App() {
     <>
       <Container>
         <Map>
-          <Character x={x} y={y} />
+          <Character x={x} y={y} charPosition={charPosition} />
         </Map>
       </Container>
       <GlobalStyle />

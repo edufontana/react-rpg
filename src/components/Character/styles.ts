@@ -4,6 +4,7 @@ interface Props {
   left: number
   top: number
   size: number
+  charPosition: number
 }
 
 export const Container = styled.div<Props>`
@@ -12,5 +13,6 @@ export const Container = styled.div<Props>`
   position: absolute;
   left: ${({ left }) => left}px;
   top: ${({ top }) => top}px;
-  background-color: red;
+  background-image: url('/assets/char.png');
+  background-position: 0px ${({ charPosition }) => charPosition}px;
 `
